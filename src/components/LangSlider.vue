@@ -1,8 +1,8 @@
 <template>
-  <div class="my-16">
+  <div class="my-12">
     
     <div class="graph_one">
-      <figure> <img class="img_side" src="/log_one.png"  alt="" /> <figcaption>CV PDF</figcaption> </figure>
+      <h1 class="title1"><u>BACHELOR</u> <br/> Mathematics <br/> +Informatics </h1>
       
       <table
         id="animations-example-6"
@@ -31,12 +31,18 @@
           </tr>
         </tbody>
       </table>
-      <figure> <img class="img_side" src="/log_two.png" alt="" /> <figcaption>GITHUB</figcaption> </figure>
-    </div>
-    <h1 class="Software_heading">DATA PROJECT LIST //   FILTER WITH ICONS </h1>
+     <h1 class="title2"><u>MASTER</u> <br/>Engineer <br/>+Big Data </h1>
+     
+         
+    </div>    
     
     
+   
 
+    <div class="tit">
+      
+      <h1 class="tit0"></h1>
+    </div>
 
     <div id="lang-wrapper">
       <swiper
@@ -60,17 +66,18 @@
         >
         <img
         @click="clickCategory(cat)"
-        :class="`cursor-pointer max-h-16 category-img max-w-16 sm:max-h-18 sm:max-w-18 md:max-h-20 md:max-w-20 lg:max-h-24 lg:max-w-24 xl:max-h-28 xl:max-w-28 lang-logo ${cat}-logo`"
+        :class="`cursor-pointer max-h-16 category-img max-w-16 sm:max-h-18 sm:max-w-18 md:max-h-20 md:max-w-20 lg:max-h-24 lg:max-w-24 xl:max-h-28 xl:max-w-28 lang-logo
+         ${cat.indexOf(' ') > -1?cat.replace(/ /g, '-'):cat }-logo`"
         :alt="cat"
         :src="`/logos/${cat}.png`"
       />
-      <p class="category-name">{{ cat }}</p>
+      <p class="category-name">{{ cat.split(' ').map(capitalize).join(' ') }}</p>
         </swiper-slide>
       </swiper>
     </div> 
-    <div id="swiper-buttons" class="flex justify-between mt-4 mx-4">
-      <button @click="prev(0)">
-        <svg
+    <div id="swiper-buttons" class="flex justify-between mb-4 mt-4 mx-4">
+      <button>
+        <svg @click="prev(0)"
           class="prev w-12 fill-gray hover:fill-mikado"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -78,8 +85,8 @@
           <path d="M16 8v-4l8 8-8 8v-4h-16l8-8h8z" />
         </svg>
       </button>
-      <button @click="next(0)">
-        <svg
+      <button>
+        <svg @click="next(0)"
           class="w-12 fill-gray hover:fill-mikado"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -113,17 +120,18 @@
         >
         <img
         @click="clickCategory(cat)"
-        :class="`cursor-pointer max-h-16 mt-10 category-img max-w-16 sm:max-h-18 sm:max-w-18 md:max-h-20 md:max-w-20 lg:max-h-24 lg:max-w-24 xl:max-h-28 xl:max-w-28 lang-logo ${cat}-logo`"
+        :class="`cursor-pointer max-h-16 mt-10 category-img max-w-16 sm:max-h-18 sm:max-w-18 md:max-h-20 md:max-w-20 lg:max-h-24 lg:max-w-24 xl:max-h-28 xl:max-w-28 lang-logo 
+        ${cat.indexOf(' ') > -1?cat.replace(/ /g, '-'):cat }-logo`"
         :alt="cat"
         :src="`/logos/${cat}.png`"
       />
-      <p class="category-name">{{ cat }}</p>
+      <p class="category-name">{{ cat.split(' ').map(capitalize).join(' ') }}</p>
         </swiper-slide>
       </swiper>
     </div> 
     <div id="swiper-buttons" class="flex justify-between mt-4 mx-4">
-      <button @click="prev(1)">
-        <svg
+      <button>
+        <svg @click="prev(1)"
           class="prev w-12 fill-gray hover:fill-mikado"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -131,8 +139,8 @@
           <path d="M16 8v-4l8 8-8 8v-4h-16l8-8h8z" />
         </svg>
       </button>
-      <button @click="next(1)">
-        <svg
+      <button>
+        <svg  @click="next(1)"
           class="w-12 fill-gray hover:fill-mikado"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -141,49 +149,61 @@
         </svg>
       </button>
     </div>
+    
   </div>
 </template>
 
 <style>
+
 
 .graph_one {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0px 10px;
-}
-
-figure {
-  margin-top: -100em;
-  margin-bottom: -300em;
-}
-
-figcaption {
-  text-align: center;
-  color: white;
-  font-size:10px;
   
 }
 
-.img_side {
-  width: 50px;
-  height: 50px;
-}
 
-.Software_heading {
-  font-size: 26px;
-  margin-top: -20px;
-  margin-bottom: 20px;
-  color: #fff;
-  text-decoration: underline;
-}
 
 .data_heading {
   font-size: 16px;
-  margin-top: 0px;
-  margin-bottom: -20px;
+  margin-top: -20px;
+  margin-bottom: 0px;
   color: #fff;
   text-decoration: underline;
+}
+
+.title1 {
+  font-size: 12px;
+  margin-top: -20px;
+  margin-bottom: 0px;
+  text-align: left;
+  color: #fff;
+  margin-left: 20px;
+
+}
+
+
+.tit0 {
+  font-size: 13px;
+  margin-top: -25px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #fff;
+  text-decoration: underline;
+  
+  
+ 
+}
+.title2 {
+  font-size: 12px;
+  margin-top: -20px;
+  margin-bottom: 0px;
+  text-align: right;
+  color: #fff;
+  margin-right: 20px;
+ 
 }
 
 
@@ -212,7 +232,8 @@ figcaption {
 
 @media all and (max-width: 640px) {
   #swiper-buttons {
-    display: none !important;
+    display: flex;
+    justify-content: space-between;
   }
 }
 .lang-logo {
@@ -233,6 +254,7 @@ figcaption {
 
 .single-category p.category-name {
   color: wheat;
+  font-size: 11px;
 }
 
 graph_one {
@@ -270,42 +292,46 @@ graph_one {
   }
 }
 .graph_one {
-  margin-top: -50px;
-  margin-bottom: 28px;
+  margin-top: -45px;
+  margin-bottom: 25px;
 }
 .graph_one th {
   color: #fff;
   margin-top: 3px;
   font-style: italic;
   font-weight: 200;
-  font-size: 11px;
+  font-size: 10px;
 }
 .graph_one tr {
   display: flex !important;
   flex-direction: column-reverse !important;
-  width: 42px;
+  width: 32px;
   margin: 7px;
 }
 .graph_one td {
-  border: 2px solid #fff;
+  border: 1px solid #fff;
 }
 .graph_one .td_one {
-  height: 70px;
+  height: 60px;
 }
 .graph_one .td_two {
-  height: 50px;
-}
-.graph_one .td_three {
   height: 40px;
 }
+.graph_one .td_three {
+  height: 30px;
+}
 .graph_one .td_four {
-  height: 60px;
+  height: 50px;
 }
 .graph_one .td_five {
   height: 30px;
 }
 .graph_one tbody {
   display: flex !important;
+}
+
+div#swiper-buttons button svg {
+  height: 25px;
 }
 
 </style>
@@ -319,25 +345,25 @@ import { Keyboard, FreeMode, Navigation } from "swiper";
 import "swiper/css";
 
 const CATEGORIESFIRSTLINE = [
-  "wind",
-  "geothermal",
-  "renewable",
-  "fossil",
-  "amazon",
-  "apple",
-  "microsoft",
-  "tesla"
+  "excel",
+  "power bi",
+  "sql",
+  "python",
+  "azure",
+  "docker",
+  "r",
+  "sap",
+  "big query"
 ];
 const CATEGORIESSECONDLINE = [
-  "telecom",
-  "uv",
-  "water",
-  "solar panel",
-  "flood",
-  "earth",
-  "solar",
-  "electricity",
-  "google"
+  "data analytics",
+  "data visualization",
+  "data engineering",
+  "database",
+  "Statistics",
+  "machine learning",
+  "front end",
+  "Web Scraping",
 ];
 
 function highlightSelected(cat: string) {
@@ -346,6 +372,7 @@ function highlightSelected(cat: string) {
   logos.forEach((logo) => {
     logo.classList.remove("logo-selected");
   });
+  console.log("logo changed ",cat)
   document.querySelectorAll(`.${cat}-logo`).forEach((logo) => {
     logo.classList.add("logo-selected");
   });
@@ -371,9 +398,15 @@ export default defineComponent({
     };
   },
   methods: {
+    capitalize(str: string) {
+      return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    },
     clickCategory(cat: string) {
       this.$emit("clickCategory", cat);
-      highlightSelected(cat);
+      if (cat.indexOf(" ") > -1) {
+                highlightSelected(cat.replace(/ /g, "-"));
+            } else
+            highlightSelected(cat);
     },
     next(index: number) {
       let button = document?.getElementsByClassName(
